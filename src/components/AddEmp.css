@@ -1,0 +1,9 @@
+.AddEmp {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.AddEmp div {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
