@@ -1,54 +1,76 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { db } from "./firebase-config";
-import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
-
+import './components/AddEmp.css'
 import AddEmployee from './components/addEmployee';
-import EmployeeList from './components/EmployeeList';
+import EmployeeList from './components/employeeList';
+import { db } from "./config/firebase";
+
+//to delete add doc and deleteDoc
+import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from 'firebase/firestore'
 import { async } from '@firebase/util';
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const employeesRef = collection(db, "employees");
 
-  const [name, setName] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
+  //all the states
+  const [name1, setName1] = useState("");
+  const [lastname1, setLastname1] = useState("");
+  const [email1, setEmail1] = useState("");
 
-  useEffect(() => {
-    getUsers();
-  }, []);
 
-  const getUsers = async () => {
-    let data = await getDocs(employeesRef);
-    setUsers(data.docs.map(doc => ({...doc.data(), id: doc.id})));
-  }
+  //state for all employees
+  const [employees, setEmployees] = useState([]);
 
-  const addEmployee = async (name, lastname, email) => {
-      await addDoc(employeesRef, {name: name, lastname: lastname, email: email});
-      getUsers();
-  }
 
-  const deleleEmployee = async (id) => {
-    let employee = await doc(employeesRef, id);
-    await deleteDoc(employee).then(getUsers());
-    
-  }
 
-  const updateEmployee = async (id, empData) => {
-    let employee = await doc(employeesRef, id);
-    await updateDoc(employee, empData).then(getUsers());
+  //database reference object
+  const employeeRef = collection(db, "employees")
+
+
+  //function to get employees
+  //async and await always goes together
+
+  const getEmployees = async() =>{
+
+    let data = await getDocs(employeeRef);
+    setEmployees(data.docs.map((doc)=>({...doc.data(), id: doc.id})));
+
   }
 
 
+  //function to add employee
+
+  const addEmployee = async() => {
+      await addDoc(employeeRef, {name: name1, lastname: lastname1, email: email1})
+      getEmployees();
+
+  }
+
+  //function to delete
+  const deleteEmployee = async(id) =>{
+      let employee = await doc( employeeRef, id);
+      await deleteDoc(employee)
+      getEmployees();
+  }
+
+  const updateEmployee = async(id) =>{
+    let employee = await doc( employeeRef, id);
+    await updateDoc(employee, {name:name1, lastname:lastname1, email:email1})
+    getEmployees();
+}
+
+  //use effect to call data from the database 
+  useEffect(()=>{
+    getEmployees();
+  }, [])
 
   return (
     <div className="App">
-      <div className='container'>
-        <AddEmployee addUser={addEmployee} name={name} setName={setName} lastname={lastname} setLastname={setLastname} email={email} setEmail={setEmail} />
-        <EmployeeList users ={users} deleteEmp = {deleleEmployee} updateEmp ={updateEmployee} name={name} lastname={lastname} email={email} />
+
+      <div className='home'>
+          <AddEmployee addEmployee ={addEmployee} setName={setName1} setLastname={setLastname1} setEmail={setEmail1}/>
+          <EmployeeList employees = {employees} deleteEmployee = {deleteEmployee} updateEmployee = {updateEmployee}/>
       </div>
-      
+        
     </div>
   );
 }

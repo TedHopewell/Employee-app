@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import "./AddEmp.css";
+import React from "react";
 
-const AddEmployee = ({addUser, name, setName, lastname, setLastname, email, setEmail}) => {
-    
-    return (
-        <div className="AddEmp">
-            <h1>New employee</h1>
-            <div>
-                <label htmlFor="name">Name:</label>
-                <input type="text" placeholder="Name..." id="name" onChange={ e => setName(e.target.value)} />
+
+
+const AddEmployee = (props) => {
+    return(
+        <div className="addEmployees">
+            <h1>Add Employees</h1>
+            <div className="input-control">
+                <label htmlFor="name"></label>
+                <input type="text" placeholder="Enter name" id="name"  onChange={ e => props.setName(e.target.value)} />
             </div>
 
-            <div>
-                <label htmlFor="lastname">Lastname:</label>
-                <input type="text" placeholder="Lastname..." id="lastname" onChange={ e => setLastname(e.target.value)} />
+            <div className="input-control">
+                <label htmlFor="lastName"></label>
+                <input type="text" placeholder="Enter last name" id="lastname" onChange={ e => props.setLastname(e.target.value)} />
             </div>
 
-            <div>
-                <label htmlFor="email"> Email </label>
-                <input type="email" placeholder="Email..." id="email" onChange={ e => setEmail(e.target.value)} />
+            <div className="input-control">
+                <label htmlFor="email"></label>
+                <input type="text" placeholder="Enter email" id="email" onChange={ e => props.setEmail(e.target.value)}/>
             </div>
+
+            <button onClick={props.addEmployee}>Add</button>
             
-            
-            <button type="button" onClick={() => addUser(name, lastname, email)}>Add Employee</button>
         </div>
     )
 }
