@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import './components/AddEmp.css'
+import './components/EmpList.css'
 import AddEmployee from './components/addEmployee';
 import EmployeeList from './components/employeeList';
 import { db } from "./config/firebase";

@@ -5,7 +5,7 @@ import React from "react";
 const AddEmployee = (props) => {
     return(
         <div className="addEmployees">
-            <h1>Add Employees</h1>
+            <h1 id="heading1">Add Employees</h1>
             <div className="input-control">
                 <label htmlFor="name"></label>
                 <input type="text" placeholder="Enter name" id="name"  onChange={ e => props.setName(e.target.value)} />
@@ -21,7 +21,7 @@ const AddEmployee = (props) => {
                 <input type="text" placeholder="Enter email" id="email" onChange={ e => props.setEmail(e.target.value)}/>
             </div>
 
-            <button onClick={props.addEmployee}>Add</button>
+            <button onClick={props.addEmployee} className="add">Add</button>
             
         </div>
     )

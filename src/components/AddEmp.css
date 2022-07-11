@@ -1,9 +1,32 @@
-.AddEmp {
+.addEmployees .employeeList {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
 }
 
-.AddEmp div {
+.addEmployees .employeeList div {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
 }
+
+#heading1{
+    border: 1px solid black;
+    width: 400px;
+}
+
+.input-control{
+    margin-top: 20px;
+}
+
+input{
+    height: 20px;
+    width: 400px;
+}
+
+.add{
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid green;
+}
+
