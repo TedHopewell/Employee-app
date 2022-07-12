@@ -3,8 +3,10 @@
 #heading2{
     border: 1px solid black;
     width: 400px;
+    color: white;
+    background-color: blue;
 }
 
-td{
-    background-color: grey;
+thead{
+    background-color: rgb(199, 194, 194);
 }

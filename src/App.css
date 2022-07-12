@@ -9,7 +9,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;  
-    background-color: antiquewhite; 
+    background-color: antiquewhite;
+    margin-left: 300px;
+    margin-right: 300px;
 }
 
 .add{
