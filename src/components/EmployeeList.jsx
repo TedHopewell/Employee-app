@@ -1,4 +1,6 @@
 import React from "react";
+import deleter from '../images/icons8-delete-64.png'
+import editor from '../images/icons8-edit-24.png'
 
 const EmployeeList = ({ employees, deleteEmployee, updateEmployee }) => {
 
@@ -25,7 +27,7 @@ const EmployeeList = ({ employees, deleteEmployee, updateEmployee }) => {
                                     <td>{employee.name}</td>
                                     <td>{employee.lastname}</td>
                                     <td>{employee.email}</td>
-                                    <td><button onClick={() => updateEmployee(employee.id)} className="edit">edit</button><button onClick={() => deleteEmployee(employee.id)} className="del">delete</button></td>
+                                    <td><button onClick={() => updateEmployee(employee.id)} className="edit"><div><img src={editor} alt="" /></div></button><button onClick={() => deleteEmployee(employee.id)} className="del"><div><img src={deleter} alt="" /></div></button></td>
                                 </tr>
                             )
                         ))

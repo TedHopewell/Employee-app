@@ -9,4 +9,25 @@
 
 thead{
     background-color: rgb(199, 194, 194);
+    
+}
+
+.employeeList{
+    overflow-y: scroll;
+    height: 280px;
+}
+
+.del img{
+    width: 15px;
+}
+.del{
+    width: 40px;
+}
+
+.edit{
+    width:40px ;
+}
+
+.edit img{
+    height: 15px;
 }

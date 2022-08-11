@@ -9,9 +9,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;  
-    background-color: antiquewhite;
+    background-color: beige;
     margin-left: 300px;
     margin-right: 300px;
+    border: 6px solid blue;
+    border-radius: 20px;
 }
 
 .add{
@@ -20,8 +22,12 @@
 
 .edit{
     cursor: pointer;
+    background-color: green;
+    color: white;
 }
 
 .del{
     cursor: pointer;
+    background-color: red;
+    color: white;
 }
