@@ -34,6 +34,11 @@ input{
     color: white;
 }
 
+.add:hover{
+  background-color: beige;
+  
+}
+
 
 
 
