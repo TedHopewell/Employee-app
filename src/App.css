@@ -27,10 +27,18 @@
     cursor: pointer;
     background-color: green;
     color: white;
+    border: 1px solid beige;
+}
+.edit:hover{
+    background-color: beige;
 }
 
 .del{
     cursor: pointer;
     background-color: red;
     color: white;
+    border: 1px solid beige;
+}
+.del:hover{
+    background-color: beige;
 }

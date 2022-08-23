@@ -29,14 +29,15 @@ input{
     width: 100px;
     height: 40px;
     border-radius: 20px;
-    border: 1px solid orange;
+    border: none;
     background-color: blue;
     color: white;
+    font-size: 1.8em;
 }
 
 .add:hover{
   background-color: beige;
-  color: black;
+  color: blue;
   
 }
 

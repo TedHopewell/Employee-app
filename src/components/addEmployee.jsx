@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
 
 
 
@@ -21,7 +24,8 @@ const AddEmployee = (props) => {
                 <input type="text" placeholder="Enter email" id="email" onChange={ e => props.setEmail(e.target.value)}/>
             </div>
 
-            <button onClick={props.addEmployee} className="add">Add</button>
+            <button onClick={props.addEmployee} className="add"><FontAwesomeIcon icon={faPlus} /></button>
+            
             
         </div>
     )
